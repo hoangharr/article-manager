@@ -23,4 +23,16 @@ public class ProjectController {
     public List<Article> findArticlesByAuthorName() {
         return service.getArticlesByAuthorName();
     }
+    @GetMapping("/genres/no-articles")
+    public List<Genre> findGenresWithNoArticles() {
+        return service.getGenresWithNoArticles();
+    }
+    @GetMapping("/articles/details")
+    public List<Object[]> findAllArticlesWithDetails() {
+        return service.getAllArticlesWithDetails();
+    }
+    @GetMapping("/genres/most-articles")
+    public Genre findGenreWithMostArticles() {
+        return service.getGenreWithMostArticles();
+    }
 }

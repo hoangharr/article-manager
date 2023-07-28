@@ -23,10 +23,10 @@ public class Article {
     private String summary;
     @Column(name = "ngayviet")
     private String date;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "ma_tloai", referencedColumnName = "ma_tloai")
     private Genre genre;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "ma_tgia", referencedColumnName = "ma_tgia")
     private Author author;
 }

@@ -28,4 +28,17 @@ public class ProjectService {
         String authorName = "Nhacvietplus";
         return articleRepo.findByAuthorAuthorName(authorName);
     }
+    public List<Genre> getGenresWithNoArticles() {
+        return genreRepo.findGenresWithNoArticles();
+    }
+    public List<Object[]> getAllArticlesWithDetails() {
+        return articleRepo.findAllArticlesWithDetails();
+    }
+    public Genre getGenreWithMostArticles() {
+        List<Genre> genres = genreRepo.findGenresOrderByArticleCount();
+        if (!genres.isEmpty()) {
+            return genres.get(0);
+        }
+        return null;
+    }
 }
